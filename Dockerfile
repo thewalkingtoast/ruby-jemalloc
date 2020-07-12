@@ -24,9 +24,7 @@ RUN apt-get update &&  apt-get upgrade -y && apt-get install -y autoconf \
                                                                 ca-certificates \
                                                                 curl \
                                                                 git \
-                                                                imagemagick \
                                                                 libjemalloc-dev \
-                                                                libmysqlclient-dev \
                                                                 tzdata \
                                                                 wget;
 
