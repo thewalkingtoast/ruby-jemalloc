@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 
-LABEL maintainer="Adam Radabaugh <adam@mediaping.com>"
+LABEL maintainer="Adam Radabaugh <adam@mediaping.net>"
 
 ARG RUBY_VERSION=2.4.10
 ARG BUNDLER_VERSION=1.17.3
