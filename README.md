@@ -7,13 +7,13 @@ The default `RUBY_VERSION` is Ruby 2.5.8.
 ## Building Ruby 2.5
 
 ```bash
-docker build -t ruby-jemalloc:2.5 .
+docker build -t mediapingllc/ruby-jemalloc:2.5 .
 ```
 
 ## Building Ruby 2.4
 
 ```bash
-docker build -t ruby-jemalloc:2.4 --build-arg RUBY_VERSION=2.4.10 .
+docker build -t mediapingllc/ruby-jemalloc:2.4 --build-arg RUBY_VERSION=2.4.10 .
 ```
 
 ## Using
