@@ -8,19 +8,19 @@ The default `BUNDLER_VERSION` is Bundler 2.2.15
 ## Building Ruby 2.7.2
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.7 .
+docker build -t mediapingllc/ruby-jemalloc:2.7.2 .
 ```
 
 ## Building Ruby 2.5
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.5 --build-arg RUBY_VERSION=2.5.8 --build-arg BUNDLER_VERSION=1.17.3 .
+docker build -t mediapingllc/ruby-jemalloc:2.5.8 --build-arg RUBY_VERSION=2.5.8 --build-arg BUNDLER_VERSION=1.17.3 .
 ```
 
 ## Building Ruby 2.4
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.4 --build-arg RUBY_VERSION=2.4.10 --build-arg BUNDLER_VERSION=1.17.3 .
+docker build -t mediapingllc/ruby-jemalloc:2.4.10 --build-arg RUBY_VERSION=2.4.10 --build-arg BUNDLER_VERSION=1.17.3 .
 ```
 
 ## Using
@@ -28,7 +28,7 @@ docker build -t mediapingllc/ruby-jemalloc:2.4 --build-arg RUBY_VERSION=2.4.10 -
 Sample Dockerfile to use either version image:
 
 ```bash
-FROM mediapingllc/ruby-jemalloc:2.5
+FROM mediapingllc/ruby-jemalloc:2.5.8
 
 ARG RUBY_VERSION=2.5.8
 ARG BUNDLER_VERSION=1.17.3
