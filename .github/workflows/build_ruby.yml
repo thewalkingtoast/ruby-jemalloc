@@ -16,7 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: [2.4.10, 2.5.8, 2.7.2]
+        ruby-version: [2.4.10, 2.5.8, 2.6.6, 2.7.2]
+        include:
+          - ruby-version: 2.4.10
+            bundler-version: 1.17.3
+          - ruby-version: 2.5.8
+            bundler-version: 1.17.3
+          - ruby-version: 2.6.6
+            bundler-version: 2.2.15
+          - ruby-version: 2.7.2
+            bundler-version: 2.2.15
 
     steps:
       - uses: actions/checkout@v2
@@ -28,10 +37,10 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build Docker image for Ruby ${{ matrix.ruby-version }}
-        run: docker build -t $IMAGE_NAME --build-arg RUBY_VERSION=${{ matrix.ruby-version }} .
+        run: docker build -t $IMAGE_NAME --build-arg RUBY_VERSION=${{ matrix.ruby-version }} --build-arg BUNDLER_VERSION=${{ matrix.bundler-version }} .
 
-      - name: Push images to GitHub Container Registry
-        run: |
-          IMAGE_ID=mediapingllc/$IMAGE_NAME
-          docker tag $IMAGE_NAME $IMAGE_ID:${{ matrix.ruby-version }}
-          docker push $IMAGE_ID:${{ matrix.ruby-version }}
+      # - name: Push images to GitHub Container Registry
+      #   run: |
+      #     IMAGE_ID=mediapingllc/$IMAGE_NAME
+      #     docker tag $IMAGE_NAME $IMAGE_ID:${{ matrix.ruby-version }}
+      #     docker push $IMAGE_ID:${{ matrix.ruby-version }}

@@ -17,6 +17,12 @@ docker build -t mediapingllc/ruby-jemalloc:2.7.2 .
 docker build -t mediapingllc/ruby-jemalloc:2.5.8 --build-arg RUBY_VERSION=2.5.8 --build-arg BUNDLER_VERSION=1.17.3 .
 ```
 
+## Building Ruby 2.6
+
+```bash
+docker build -t mediapingllc/ruby-jemalloc:2.6.6 --build-arg RUBY_VERSION=2.6.6 --build-arg BUNDLER_VERSION=2.2.15 .
+```
+
 ## Building Ruby 2.4
 
 ```bash
