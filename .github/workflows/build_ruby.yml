@@ -16,15 +16,21 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: [2.4.10, 2.5.8, 2.6.6, 2.7.2]
+        ruby-version: [2.4.10, 2.5.8, 2.5.9, 2.6.6, 2.6.7, 2.7.2, 2.7.3]
         include:
           - ruby-version: 2.4.10
             bundler-version: 1.17.3
           - ruby-version: 2.5.8
             bundler-version: 1.17.3
+          - ruby-version: 2.5.9
+            bundler-version: 1.17.3
           - ruby-version: 2.6.6
             bundler-version: 2.2.15
+          - ruby-version: 2.6.7
+            bundler-version: 2.2.15
           - ruby-version: 2.7.2
+            bundler-version: 2.2.15
+          - ruby-version: 2.7.3
             bundler-version: 2.2.15
 
     steps:

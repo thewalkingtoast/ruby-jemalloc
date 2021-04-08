@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 LABEL maintainer="Adam Radabaugh <adam@mediaping.net>"
 
-ARG RUBY_VERSION=2.7.2
+ARG RUBY_VERSION=2.7.3
 ARG BUNDLER_VERSION=2.2.15
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive

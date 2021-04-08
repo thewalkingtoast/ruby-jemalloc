@@ -2,25 +2,25 @@
 
 This provides an Ubuntu 18.04 base build of Ruby from source (using ruby-build) with jemalloc.
 
-The default `RUBY_VERSION` is Ruby 2.7.2.
+The default `RUBY_VERSION` is Ruby 2.7.3.
 The default `BUNDLER_VERSION` is Bundler 2.2.15
 
-## Building Ruby 2.7.2
+## Building Ruby 2.7.3
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.7.2 .
-```
-
-## Building Ruby 2.5
-
-```bash
-docker build -t mediapingllc/ruby-jemalloc:2.5.8 --build-arg RUBY_VERSION=2.5.8 --build-arg BUNDLER_VERSION=1.17.3 .
+docker build -t mediapingllc/ruby-jemalloc:2.7.3 .
 ```
 
 ## Building Ruby 2.6
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.6.6 --build-arg RUBY_VERSION=2.6.6 --build-arg BUNDLER_VERSION=2.2.15 .
+docker build -t mediapingllc/ruby-jemalloc:2.6.7 --build-arg RUBY_VERSION=2.6.7 --build-arg BUNDLER_VERSION=2.2.15 .
+```
+
+## Building Ruby 2.5
+
+```bash
+docker build -t mediapingllc/ruby-jemalloc:2.5.9 --build-arg RUBY_VERSION=2.5.9 --build-arg BUNDLER_VERSION=1.17.3 .
 ```
 
 ## Building Ruby 2.4
@@ -34,12 +34,12 @@ docker build -t mediapingllc/ruby-jemalloc:2.4.10 --build-arg RUBY_VERSION=2.4.1
 Sample Dockerfile to use either version image:
 
 ```bash
-FROM mediapingllc/ruby-jemalloc:2.5.8
+FROM mediapingllc/ruby-jemalloc:2.5.9
 
-ARG RUBY_VERSION=2.5.8
+ARG RUBY_VERSION=2.5.9
 ARG BUNDLER_VERSION=1.17.3
 ENV LANG C.UTF-8
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y libmysqlclient-dev && \
