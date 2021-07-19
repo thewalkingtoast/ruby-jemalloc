@@ -2,19 +2,19 @@
 
 This provides an Ubuntu 18.04 base build of Ruby from source (using ruby-build) with jemalloc.
 
-The default `RUBY_VERSION` is Ruby 2.7.3.
-The default `BUNDLER_VERSION` is Bundler 2.2.16
+The default `RUBY_VERSION` is Ruby 2.7.4.
+The default `BUNDLER_VERSION` is Bundler 2.2.24
 
-## Building Ruby 2.7.3
+## Building Ruby 2.7.4
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.7.3 .
+docker build -t mediapingllc/ruby-jemalloc:2.7.4 .
 ```
 
 ## Building Ruby 2.6
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.6.7 --build-arg RUBY_VERSION=2.6.7 --build-arg BUNDLER_VERSION=2.2.16 .
+docker build -t mediapingllc/ruby-jemalloc:2.6.7 --build-arg RUBY_VERSION=2.6.7 --build-arg BUNDLER_VERSION=2.2.24 .
 ```
 
 ## Building Ruby 2.5
