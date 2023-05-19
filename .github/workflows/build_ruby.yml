@@ -35,9 +35,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          build-args:
-            - RUBY_VERSION: ${{ matrix.ruby-version }}
-            - BUNDLER_VERSION: ${{ matrix.bundler-version }}
+          build-args: |
+            RUBY_VERSION=${{ matrix.ruby-version }}
           platforms: linux/amd64,linux/arm64
           push: true
           tags: $IMAGE_NAME $IMAGE_ID:${{ matrix.ruby-version }}
