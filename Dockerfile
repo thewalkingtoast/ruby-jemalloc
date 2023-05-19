@@ -16,7 +16,7 @@ RUN apt-get update &&  apt-get upgrade -y && apt-get install -y autoconf \
   zlib1g-dev \
   libncurses5-dev \
   libffi-dev \
-  libgdbm5 \
+  libgdbm6 \
   libgdbm-dev \
   libdb-dev \
   apt-transport-https \
