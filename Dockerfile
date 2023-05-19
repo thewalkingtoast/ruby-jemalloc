@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 LABEL maintainer="Adam Radabaugh <adam@mediaping.net>"
 
@@ -51,7 +51,7 @@ ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
 ENV PATH $GEM_HOME/bin:$PATH
 
 # adjust permissions of a few directories for running "gem install" as an arbitrary user
-RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
+RUN mkdir -p "$GEM_HOME" && chmod 1777 "$GEM_HOME"
 
 # cleanup build environment
 RUN apt-get purge -y git && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
