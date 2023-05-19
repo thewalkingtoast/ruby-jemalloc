@@ -39,4 +39,4 @@ jobs:
             RUBY_VERSION=${{ matrix.ruby-version }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: $IMAGE_NAME $IMAGE_ID:${{ matrix.ruby-version }}
+          tags: mediapingllc/ruby-jemalloc:${{ matrix.ruby-version }}
