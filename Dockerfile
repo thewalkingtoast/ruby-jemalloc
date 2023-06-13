@@ -7,7 +7,9 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 # container dependencies
-RUN apt-get update &&  apt-get upgrade -y && apt-get install -y autoconf \
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  apt-get install -y autoconf \
   bison \
   build-essential \
   libssl-dev \
