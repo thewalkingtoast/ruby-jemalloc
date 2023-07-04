@@ -16,10 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: [2.4.10, 2.5.9]
+        ruby-version: [2.4.10, 2.5.9, 2.6.10]
         include:
           - ruby-version: 2.4.10
           - ruby-version: 2.5.9
+          - ruby-version: 2.6.10
 
     steps:
       - uses: actions/checkout@v3

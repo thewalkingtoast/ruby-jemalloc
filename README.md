@@ -1,13 +1,19 @@
 # README #
 
-This provides an Ubuntu 18.04 base build of Ruby from source (using ruby-build) with jemalloc.
+This provides an Ubuntu 20.04 base build of Ruby from source (using ruby-build) with jemalloc.
 
-The default `RUBY_VERSION` is Ruby 2.5.9.
+The default `RUBY_VERSION` is Ruby 2.6.10.
+
+## Building Ruby 2.6
+
+```bash
+docker build -t mediapingllc/ruby-jemalloc:2.6.10 .
+```
 
 ## Building Ruby 2.5
 
 ```bash
-docker build -t mediapingllc/ruby-jemalloc:2.5.9 .
+docker build -t mediapingllc/ruby-jemalloc:2.5.9 --build-arg RUBY_VERSION=2.5.9 .
 ```
 
 ## Building Ruby 2.4
@@ -18,15 +24,15 @@ docker build -t mediapingllc/ruby-jemalloc:2.4.10 --build-arg RUBY_VERSION=2.4.1
 
 ## Using
 
-Sample Dockerfile to use either version image:
+Sample Dockerfile:
 
 ```bash
-FROM mediapingllc/ruby-jemalloc:2.5.9
+FROM mediapingllc/ruby-jemalloc:2.6.10
 
-ARG RUBY_VERSION=2.5.9
+ARG RUBY_VERSION=2.6.10
 ARG BUNDLER_VERSION=1.17.3
-ENV LANG C.UTF-8
-ENV DEBIAN_FRONTEND noninteractive
+ENV LANG=C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y libmysqlclient-dev && \
@@ -39,6 +45,7 @@ WORKDIR /app
 
 COPY Gemfile /app/
 COPY Gemfile.lock /app/
+
 RUN gem install bundler && \
     bundle install --without development test --jobs `expr $(cat /proc/cpuinfo | grep -c "cpu cores") - 1` --retry 3;
 
