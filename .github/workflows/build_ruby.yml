@@ -3,7 +3,7 @@ name: Publish Ruby Images
 on:
   schedule:
     # The first of the month at 1:03am UTC
-    - cron: "0 * * * *"
+    - cron: "3 1 1 * *"
   push:
     branches:
       - main
