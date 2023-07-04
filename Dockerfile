@@ -50,7 +50,7 @@ RUN git clone https://github.com/rbenv/ruby-build.git; \
     gem --version;
 
 # don't create ".bundle" in apps
-ENV GEM_HOME=/usr/local/bundle
+ENV GEM_HOME=/gems
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
 ENV BUNDLE_APP_CONFIG="${GEM_HOME}"
 ENV PATH="${GEM_HOME}/bin:${PATH}"
