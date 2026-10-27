@@ -1,9 +1,3 @@
 #!/bin/bash
 
-if [ "$RUBY_VERSION" = "2.6.10" ]; then
-  gem update --system
-fi
-
-if [ "$RUBY_VERSION" = "2.7.8" ]; then
-  gem update --system
-fi
+echo "Here is where I'd update gem system... if the Rubies were not ancient!\n"
